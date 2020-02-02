@@ -1,0 +1,56 @@
+requestHeader:
+     { Accept: 'application/json, text/plain, */*',
+       'User-Agent': 'axios/0.19.2' } } }
+
+Explain: 
+
+Accept: <MIME_type>/<MIME_subtype>
+Accept: <MIME_type>/*
+Accept: */*
+
+<MIME_type>/<MIME_subtype>
+A single, precise MIME type, like text/html.
+<MIME_type>/*
+A MIME type, but without any subtype. image/* will match image/png, image/svg, image/gif and any other image types.
+*/*
+Any MIME type
+
+
+The Accept request-header field can be used to specify certain media types which are acceptable for the response. Accept headers can be used to indicate that the request is specifically limited to a small set of desired types, as in the case of a request for an in-line image.
+
+User-Agent: <product> / <product-version> <comment>
+->
+   <product>
+   A product identifier — its name or development codename.
+   <product-version>
+   Version number of the product.
+
+Respose headers:
+     { expires: 'Sun, 02 Feb 2020 05:23:00 GMT',
+       date: 'Sun, 02 Feb 2020 05:23:00 GMT',
+       'cache-control': 'private, max-age=0, must-revalidate, no-transform',
+       etag: '"iPPser6Mov75mJUb_EktR4oB1SI/g1fOZyoV7e2tUbD9dsDGb1Qk-N4"',
+       vary: 'Origin, X-Origin',
+       'content-type': 'application/json; charset=UTF-8',
+       'x-content-type-options': 'nosniff',
+       'x-frame-options': 'SAMEORIGIN',
+       'x-xss-protection': '1; mode=block',
+       'content-length': '12711',
+       server: 'GSE',
+       connection: 'close' },
+
+Explain:
+-> 
+expires:  The Expires header contains the date/time after which the response is considered stale
+date: The Date general HTTP header contains the date and time at which the message was originated
+cache-control: Cache-control is an HTTP header used to specify browser caching policies in both client requests and server responses. Policies include how a resource is cached, where it's cached and its maximum age before expiring
+etag:  It lets caches be more efficient and save bandwidth, as a web server does not need to resend a full response if the content has not changed. Additionally, etags help prevent simultaneous updates of a resource from overwriting each other
+vary:   determines how to match future request headers to decide whether a cached response can be used rather than requesting a fresh one from the origin server
+content-type:  Content-Type header tells the client what the content type of the returned content actually is
+x-content-type-options:
+x-frame-options: indicate whether or not a browser should be allowed to render a page in a <frame> , <iframe> , <embed> or <object>
+x-xss-protection:  stops pages from loading when they detect reflected cross-site scripting (XSS) attacks
+Server: contains information about the software used by the origin server to handle the request
+Connection:  controls whether or not the network connection stays open after the current transaction finishes
+
+
